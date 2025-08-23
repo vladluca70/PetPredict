@@ -1,10 +1,11 @@
 const express=require('express')
 const mongoose=require('mongoose')
 const cors=require('cors')
+const bcrypt=require('bcrypt')
 const port=5010
 const url='mongodb://localhost:27017/pet-prediction';
 
-app=express()
+const app=express()
 app.use(cors())
 app.use(express.json())
 
@@ -20,7 +21,7 @@ const userSchema = new mongoose.Schema({
 const userModel=mongoose.model('User', userSchema)
 
 
-router.post('/login', async(req, res) => {
+app.post('/login', async(req, res) => {
     try {
         const username=req.body.username
         const password=req.body.password

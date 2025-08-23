@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function LoginPage() {
+function SignupPage() {
   const [username, setUsername]=useState('')
   const [password, setPassword]=useState('')
   const [errorMessage, setErrorMessage]=useState('')
@@ -15,7 +15,7 @@ function LoginPage() {
 
   async function handleLoginType(e) {
     e.preventDefault();
-    await sendData('login');
+    await sendData('signup');
   }
 
   async function sendData(requestType) {
@@ -29,8 +29,8 @@ function LoginPage() {
       const responseData=await response.json()
         if(response.ok){
             setErrorMessage('')
-            //succesfulLoginOrRegister(username)
             localStorage.setItem('userValid', 'yes')
+            //succesfulLoginOrRegister(username)
         }
         else{
             setErrorMessage(responseData.message)
@@ -42,15 +42,15 @@ function LoginPage() {
 
   return (
     <div>
-      <h2>Login Page</h2>
+      <h2>Signup Page</h2>
       <form>
         <input required type="text" placeholder="Username" onChange={(e)=>handleUsernameChange(e)}/>
         <input required type="password" placeholder="Password" onChange={(e)=>handlePasswordChange(e)}/>
-        <button type="submit" onClick={handleLoginType}>Login</button>
+        <button type="submit" onClick={handleLoginType}>Signup</button>
         {errorMessage && <p>{errorMessage}</p>}
       </form>
     </div>
   );
 }
 
-export default LoginPage;
+export default SignupPage;
