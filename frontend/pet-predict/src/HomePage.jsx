@@ -1,10 +1,10 @@
 import HomePageHeader from './HomePageHeader'
 
-function HomePage()
-{
-    return(
+function HomePage() {
+    return (
         <>
-            <HomePageHeader/>
+            <HomePageHeader />
+            <h1>Welcome to Home Page!</h1>
         </>
     )
 }
