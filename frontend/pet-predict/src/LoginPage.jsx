@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const [username, setUsername]=useState('')
   const [password, setPassword]=useState('')
   const [errorMessage, setErrorMessage]=useState('')
+  const navigate=useNavigate()
 
   function handleUsernameChange(e){
     setUsername(e.target.value)
@@ -11,6 +13,11 @@ function LoginPage() {
 
   function handlePasswordChange(e){
     setPassword(e.target.value)
+  }
+
+  function successfulLogin(){
+    localStorage.setItem('userValid', 'yes');
+    navigate('/');
   }
 
   async function handleLoginType(e) {
@@ -30,7 +37,7 @@ function LoginPage() {
         if(response.ok){
             setErrorMessage('')
             //succesfulLoginOrRegister(username)
-            localStorage.setItem('userValid', 'yes')
+            successfulLogin();
         }
         else{
             setErrorMessage(responseData.message)
