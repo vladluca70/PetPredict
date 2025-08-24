@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function SignupPage() {
   const [username, setUsername]=useState('')
@@ -17,6 +18,7 @@ function SignupPage() {
 
   function successfulSignup(){
     localStorage.setItem('userValid', 'yes')
+    localStorage.setItem('username', username)
     navigate('/')
   }
 
@@ -55,6 +57,7 @@ function SignupPage() {
         <input required type="password" placeholder="Password" onChange={(e)=>handlePasswordChange(e)}/>
         <button type="submit" onClick={handleLoginType}>Signup</button>
         {errorMessage && <p>{errorMessage}</p>}
+        <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
       </form>
     </div>
   );

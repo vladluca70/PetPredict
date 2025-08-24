@@ -4,6 +4,7 @@ import LoginPage from './LoginPage';
 import AboutPage from './AboutPage';
 import SignupPage from './SignupPage';
 import { Routes, Route } from 'react-router-dom';
+import PredictPet from './PredictPet';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />}/>
+      <Route path="/predictpet" element={<PredictPet />}/>
     </Routes>
   );
 }

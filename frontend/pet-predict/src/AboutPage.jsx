@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function AboutPage() {
   const userValid=localStorage.getItem('userValid')
+  const username=localStorage.getItem('username')
   const navigate=useNavigate();
 
   function handleLogout(){
@@ -10,10 +11,11 @@ function AboutPage() {
     navigate('/');
   }
 
-  if(userValid==='yes'){
+  if(userValid==='yes' && username){
     return (
     <>
-      <h2>About Page</h2>
+      <h2>About Page</h2> <br/>
+      <h3>Welcome {username}</h3>
       <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
       <button onClick={handleLogout}>Logout</button>
     </>)
