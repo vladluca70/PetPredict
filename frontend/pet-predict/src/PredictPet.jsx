@@ -9,6 +9,8 @@ function PredictPet(){
     const [tailLength, setTailLength]=useState('')
     const [predictedLabel, setPredictedLabel]=useState('')
     const [errorMessage, setErrorMessage]=useState('')
+    const userValid=localStorage.getItem('userValid')
+    const username=localStorage.getItem('username')
 
     function handleHeight(e){
         setHeight(e.target.value)
@@ -45,7 +47,7 @@ function PredictPet(){
         .then(data => {
             if (data.predicted_label) {
                 //alert(`Predicted price: $${data.predicted_price.toFixed(2)}`);
-                setPredictedLabel(data.predicted_label.toFixed(2))
+                setPredictedLabel(data.predicted_label)
             } else {
                 setErrorMessage("Prediction failed: " + data.error);
             }
@@ -56,9 +58,10 @@ function PredictPet(){
         });
     }
 
-    return(
+    if(userValid === 'yes'){
+        return(
         <>
-            hello
+            Hello {username} <br/>
             Height: <input type="number" onChange={(e)=>handleHeight(e)} placeholder="A number between 0 and 100" required/><br/>
             Weight: <input type="number" onChange={(e)=>handleWeight(e)} placeholder="A number between 0 and 100" required/><br/>
             Ear size: <input type="number" onChange={(e)=>handleEarSize(e)} placeholder="A number between 0 and 100" required/><br/>
@@ -69,7 +72,16 @@ function PredictPet(){
             {errorMessage && <p>{errorMessage}</p>}
             <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
         </>
-    )
+        )
+    }
+    else{
+        return(
+            <>
+                <h2>You must be logged in</h2>
+                <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
+            </>
+        )
+    }
 }
 
 export default PredictPet;

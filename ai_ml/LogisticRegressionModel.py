@@ -11,4 +11,11 @@ y = df['Label']
 model = LogisticRegression()
 model.fit(X, y)
 
+# dataTest = pd.DataFrame({
+#     'Height': [10.2],
+#     'Weight': [13.5],
+#     'Ear Size': [15.0], 
+#     'Tail Length': [3.0]    
+# })
+
 joblib.dump(model, 'model.joblib')
