@@ -9,6 +9,7 @@ function HomePageHeader() {
                 <Link to="/login" style={{ margin: '0 10px' }}>Login</Link>
                 <Link to="/signup" style={{ margin: '0 10px' }}>Signup</Link>
                 <Link to="/predictpet" style={{ margin: '0 10px' }}>Predict Pet</Link>
+                <Link to="/predictimage" style={{ margin: '0 10px' }}>Predict Image</Link>
             </div>
         </header>
     );
