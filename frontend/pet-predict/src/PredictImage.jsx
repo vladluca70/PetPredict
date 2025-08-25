@@ -14,12 +14,30 @@ function PredictImage(){
         }
     }
     
+    async function sendImgFunction() {
+        const formData = new FormData();
+        formData.append("_image", image);
+            try {
+        const response = await fetch("http://localhost:5000/predict-img", {
+            method: "POST",
+            body: formData,
+        });
+
+        const result = await response.json();
+        console.log(result);
+        alert("Imagine trimisă cu succes!");
+        } catch (error) {
+            console.error("Eroare la trimiterea imaginii:", error);
+        }
+
+    }
+
     if(userValid === "yes"){
         return(
             <>
                 <h2>Welcome {username}</h2> <br/>
                 <input onChange={handleChangeImage} placeholder="It must be an image" type="file" /> <br/>
-                <button>Predict the pet from image</button>
+                <button onClick={sendImgFunction}>Predict the pet from image</button>
                 <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link>
                  {image && (
                     <img 

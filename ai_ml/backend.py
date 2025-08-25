@@ -30,5 +30,32 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/predict-img', methods=['POST'])
+def predict_img():
+    if '_image' not in request.files:
+        return jsonify({"error": "No image provided"}), 400
+
+    file = request.files['_image']
+
+    if file.filename == '':
+        return jsonify({"error": "Empty filename"}), 400
+
+    try:
+        image = Image.open(file.stream)
+
+        image = image.resize((128, 128))
+        img_array = np.array(image)
+
+        img_array = img_array.flatten().reshape(1, -1)
+
+        prediction = model.predict(img_array)
+
+        return jsonify({
+            "prediction": str(prediction[0])
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
 if __name__ == '__main__':
     app.run(debug=True)
