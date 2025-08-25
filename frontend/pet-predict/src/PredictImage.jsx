@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './AboutPage.css'; 
+import './CssFiles/AboutPage.css'; 
 
 function PredictImage(){
     const [image, setImage] = useState(null);
-    const [predictions, setPredictions] = useState([]); // <-- array pentru top 3 predicții
+    const [predictions, setPredictions] = useState([]); 
     const userValid = localStorage.getItem('userValid');
     const username = localStorage.getItem('username');
 
@@ -12,7 +12,7 @@ function PredictImage(){
         const file = e.target.files[0];
         if(file){
             setImage(file);
-            setPredictions([]); // resetează predicțiile la schimbarea imaginii
+            setPredictions([]); 
         }
     }
     
@@ -32,7 +32,7 @@ function PredictImage(){
             console.log(result);
 
             if(result.predictions){
-                setPredictions(result.predictions); // setează toate predicțiile
+                setPredictions(result.predictions); 
             } else if(result.error){
                 setPredictions([{ label: "Error", probability: 0 }]);
             }

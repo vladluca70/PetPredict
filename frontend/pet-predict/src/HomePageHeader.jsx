@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.css'; // folosim HomePage.css acum
+import './CssFiles/HomePage.css'; 
 
 function HomePageHeader() {
     return (

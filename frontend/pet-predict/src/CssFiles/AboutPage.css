@@ -46,7 +46,6 @@
   text-decoration: underline;
 }
 
-/* Container specific pentru login */
 .login-container {
   max-width: 400px;
   margin: 50px auto;
@@ -58,7 +57,6 @@
   background-color: #fdfdfd;
 }
 
-/* Formular login */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -85,14 +83,12 @@
   margin-top: 10px;
 }
 
-/* Suplimentar: input numeric cu stil uniform */
 .section .form-input {
   width: 90%;
   max-width: 300px;
   margin: 8px 0;
 }
 
-/* Input fișier */
 .file-input {
   width: 90%;
   max-width: 300px;
@@ -100,7 +96,6 @@
   padding: 5px;
 }
 
-/* Previziualizare imagine */
 .preview-image {
   max-width: 200px;
   margin-top: 10px;
@@ -108,7 +103,6 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Lista de predicții */
 .prediction-list {
   margin-top: 15px;
   font-weight: bold;

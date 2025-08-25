@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './AboutPage.css'; 
+import './CssFiles/AboutPage.css'; 
 
 function AboutPage() {
   const userValid = localStorage.getItem('userValid');

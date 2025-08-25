@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './AboutPage.css'; 
+import './CssFiles/AboutPage.css'; 
 
 function PredictPet(){
     const [height, setHeight]=useState('')
@@ -46,7 +46,6 @@ function PredictPet(){
         .then(res => res.json())
         .then(data => {
             if (data.predicted_label) {
-                //alert(`Predicted price: $${data.predicted_price.toFixed(2)}`);
                 setPredictedLabel(data.predicted_label)
             } else {
                 setErrorMessage("Prediction failed: " + data.error);

@@ -1,4 +1,3 @@
-/* Header */
 .header {
     padding: 15px 30px;
     background-color: #f8f9fa;
@@ -20,7 +19,6 @@
     transform: scale(1.1);
 }
 
-/* Main Home Section */
 .home-main {
     display: flex;
     align-items: center;
@@ -71,7 +69,6 @@
     animation: bounce 2s infinite;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -88,7 +85,6 @@
 }
 
 
-/* Header */
 .header {
     padding: 15px 30px;
     background-color: #f8f9fa;
@@ -114,5 +110,3 @@
     color: #ff6b6b;
     transform: scale(1.1);
 }
-
-/* Rest of HomePage styles (home-main, home-text, home-image etc.) remain unchanged */

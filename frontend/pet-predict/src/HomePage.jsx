@@ -1,7 +1,6 @@
-import React from 'react';
 import HomePageHeader from './HomePageHeader';
-import './HomePage.css';
-import petImage from './pets.jpg'; 
+import './CssFiles/HomePage.css';
+import petImage from './assets/pets.jpg'; 
 
 function HomePage() {
     return (
