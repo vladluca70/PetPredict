@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './AboutPage.css'; 
 
 function SignupPage() {
   const [username, setUsername]=useState('')
@@ -50,17 +51,30 @@ function SignupPage() {
   }
 
   return (
-    <div>
-      <h2>Signup Page</h2>
-      <form>
-        <input required type="text" placeholder="Username" onChange={(e)=>handleUsernameChange(e)}/>
-        <input required type="password" placeholder="Password" onChange={(e)=>handlePasswordChange(e)}/>
-        <button type="submit" onClick={handleLoginType}>Signup</button>
-        {errorMessage && <p>{errorMessage}</p>}
-        <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
+    <div className="login-container">
+      <h2 className="header">Signup for Animal Prediction 🐾</h2>
+      <form className="login-form">
+        <input 
+          required 
+          type="text" 
+          placeholder="Username" 
+          className="form-input" 
+          onChange={(e) => handleUsernameChange(e)} 
+        />
+        <input 
+          required 
+          type="password" 
+          placeholder="Password" 
+          className="form-input" 
+          onChange={(e) => handlePasswordChange(e)} 
+        />
+        <button type="submit" className="action-button" onClick={handleLoginType}>Signup</button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <Link to="/" className="home-link">Go back home</Link>
       </form>
     </div>
   );
+
 }
 
 export default SignupPage;

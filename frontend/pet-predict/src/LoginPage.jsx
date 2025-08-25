@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './AboutPage.css'; 
 
 function LoginPage() {
   const [username, setUsername]=useState('')
@@ -48,15 +49,27 @@ function LoginPage() {
     }
   }
 
-  return (
-    <div>
-      <h2>Login Page</h2>
-      <form>
-        <input required type="text" placeholder="Username" onChange={(e)=>handleUsernameChange(e)}/>
-        <input required type="password" placeholder="Password" onChange={(e)=>handlePasswordChange(e)}/>
-        <button type="submit" onClick={handleLoginType}>Login</button>
-        {errorMessage && <p>{errorMessage}</p>}
-        <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
+ return (
+    <div className="login-container">
+      <h2 className="header">Login to Animal Prediction 🐾</h2>
+      <form className="login-form">
+        <input 
+          required 
+          type="text" 
+          placeholder="Username" 
+          className="form-input" 
+          onChange={handleUsernameChange} 
+        />
+        <input 
+          required 
+          type="password" 
+          placeholder="Password" 
+          className="form-input" 
+          onChange={handlePasswordChange} 
+        />
+        <button type="submit" className="action-button" onClick={handleLoginType}>Login</button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <Link to="/" className="home-link">Go back home</Link>
       </form>
     </div>
   );

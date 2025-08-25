@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './AboutPage.css'; 
 
 function PredictPet(){
     const [height, setHeight]=useState('')
@@ -58,30 +58,59 @@ function PredictPet(){
         });
     }
 
-    if(userValid === 'yes'){
-        return(
-        <>
-            Hello {username} <br/>
-            Height: <input type="number" onChange={(e)=>handleHeight(e)} placeholder="A number between 0 and 100" required/><br/>
-            Weight: <input type="number" onChange={(e)=>handleWeight(e)} placeholder="A number between 0 and 100" required/><br/>
-            Ear size: <input type="number" onChange={(e)=>handleEarSize(e)} placeholder="A number between 0 and 100" required/><br/>
-            Tail Length: <input type="number" onChange={(e)=>handleTailLength(e)} placeholder="A number between 0 and 100" required/><br/>
-            <button onClick={sendDataFunction}>Send Data</button>
-            
-            {predictedLabel && <p>{predictedLabel}</p>}
-            {errorMessage && <p>{errorMessage}</p>}
-            <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
-        </>
-        )
-    }
-    else{
-        return(
-            <>
-                <h2>You must be logged in</h2>
-                <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link> <br/>
-            </>
-        )
-    }
+    if (userValid === 'yes') {
+    return (
+      <div className="about-container">
+        <h3 className="header">Hello {username}!</h3>
+
+        <div className="section">
+          <h4>Enter Animal Features</h4>
+          <input 
+            type="number" 
+            className="form-input" 
+            onChange={(e) => handleHeight(e)} 
+            placeholder="Height (0-100)" 
+            required 
+          />
+          <input 
+            type="number" 
+            className="form-input" 
+            onChange={(e) => handleWeight(e)} 
+            placeholder="Weight (0-100)" 
+            required 
+          />
+          <input 
+            type="number" 
+            className="form-input" 
+            onChange={(e) => handleEarSize(e)} 
+            placeholder="Ear Size (0-100)" 
+            required 
+          />
+          <input 
+            type="number" 
+            className="form-input" 
+            onChange={(e) => handleTailLength(e)} 
+            placeholder="Tail Length (0-100)" 
+            required 
+          />
+          <button className="action-button" onClick={sendDataFunction}>Send Data</button>
+
+          {predictedLabel && <p className="prediction-message">{predictedLabel}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+          <Link to="/" className="home-link">Go back home</Link>
+        </div>
+      </div>
+    );
+} else {
+    return (
+      <div className="about-container">
+        <h2 className="header">You must be logged in</h2>
+        <Link to="/" className="home-link">Go back home</Link>
+      </div>
+    );
+}
+
 }
 
 export default PredictPet;

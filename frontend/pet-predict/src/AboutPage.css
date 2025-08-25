@@ -1,0 +1,139 @@
+.about-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+}
+
+.header {
+  color: #2c3e50;
+}
+
+.section {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+}
+
+.action-button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #2980b9;
+}
+
+.home-link {
+  margin: 10px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+/* Container specific pentru login */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+}
+
+/* Formular login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.prediction-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Suplimentar: input numeric cu stil uniform */
+.section .form-input {
+  width: 90%;
+  max-width: 300px;
+  margin: 8px 0;
+}
+
+/* Input fișier */
+.file-input {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+/* Previziualizare imagine */
+.preview-image {
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Lista de predicții */
+.prediction-list {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.prediction-list ul {
+  padding-left: 20px;
+}
+
+.prediction-list li {
+  margin: 5px 0;
+}
+
+.home-header {
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.header-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}

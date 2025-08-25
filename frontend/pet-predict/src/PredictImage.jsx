@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import './AboutPage.css'; 
 
 function PredictImage(){
     const [image, setImage] = useState(null);
@@ -42,45 +43,55 @@ function PredictImage(){
         }
     }
 
-    if(userValid === "yes"){
-        return(
-            <>
-                <h2>Welcome {username}</h2> <br/>
-                <input onChange={handleChangeImage} placeholder="It must be an image" type="file" /> <br/>
-                <button onClick={sendImgFunction}>Predict the pet from image</button>
-                <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link>
-                
-                {image && (
-                    <img 
-                        src={URL.createObjectURL(image)} 
-                        alt="preview" 
-                        style={{ maxWidth: '200px', marginTop: '10px' }} 
-                    />
-                )}
+    if (userValid === "yes") {
+    return (
+      <div className="about-container">
+        <h2 className="header">Welcome {username}!</h2>
 
-                {predictions.length > 0 && (
-                    <div style={{ marginTop: '10px', fontWeight: 'bold' }}>
-                        <h3>Predictions:</h3>
-                        <ul>
-                            {predictions.map((p, index) => (
-                                <li key={index}>
-                                    {p.label} - {p.probability}%
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-            <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link>
-            </>
-        )
-    } else {
-        return(
-            <>
-                <h2>You must be logged in</h2> <br/>
-                <Link to="/" style={{ margin: '0 10px' }}>Go back home</Link>
-            </>
-        )
-    }
+        <div className="section">
+          <h4>Predict Pet from Image</h4>
+          <input 
+            type="file" 
+            accept="image/*" 
+            className="form-input file-input" 
+            onChange={handleChangeImage} 
+          />
+          <button className="action-button" onClick={sendImgFunction}>Predict the pet from image</button>
+
+          {image && (
+            <img 
+              src={URL.createObjectURL(image)} 
+              alt="preview" 
+              className="preview-image"
+            />
+          )}
+
+          {predictions.length > 0 && (
+            <div className="prediction-list">
+              <h3>Predictions:</h3>
+              <ul>
+                {predictions.map((p, index) => (
+                  <li key={index}>
+                    {p.label} - {p.probability}%
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <Link to="/" className="home-link">Go back home</Link>
+        </div>
+      </div>
+    );
+} else {
+    return (
+      <div className="about-container">
+        <h2 className="header">You must be logged in</h2>
+        <Link to="/" className="home-link">Go back home</Link>
+      </div>
+    );
+}
+
 }
 
 export default PredictImage;
