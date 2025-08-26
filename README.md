@@ -7,9 +7,10 @@ This project is a full-stack web application (MERN stack + Python) designed to p
 - **Frontend:** React, HTML, CSS  
 - **Backend:** Node.js, Express  
 - **Authentication:** bcrypt (password hashing)  
-- **Machine Learning:** Python, Pandas, scikit-learn, PyTorch, Flask, Selenium  
+- **Machine Learning:** Python, Pandas, scikit-learn, PyTorch, Flask
 - **Model Management:** joblib (save/load model)  
 - **Database:** MongoDB  
+- **Testing/Automation:** Selenium  
 - **Other:** CORS, Flask API  
 
 ## 🚀 Key Features
