@@ -1,4 +1,4 @@
-# 🏠 PetPredict (MERN + Python)
+# 🐾 PetPredict (MERN + Python)
 
 This project is a full-stack web application (MERN stack + Python) designed to predict whether a pet is a dog or a cat, either from numeric input or from an image.
 
