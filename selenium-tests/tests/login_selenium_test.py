@@ -21,6 +21,5 @@ try:
         print("Test passed: User logged in successfully!")
     else:
         print("Test failed: Login unsuccessful.")
-
 finally:
     driver.quit()
